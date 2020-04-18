@@ -1,0 +1,77 @@
+<!-- <div *ngIf="SchoolDetail == null">
+	<img src="https://lh3.googleusercontent.com/proxy/vHOEhA9mAbc0vVqexgQ7YXlsRHfIGqQ3hH3U-zkPR5qPqNrgDa2afZ-6bphk8_lCBfl6vGTttM_12wdxM-0SShcXVhJ8A_042DuLSvp0WacMYBBCrL4axNnj6AkaDQ" width="1000">
+</div> -->
+
+<!-- <div *ngIf="SchoolDetail != null"> -->
+<form [formGroup]="schoolForm">
+	<div class="container">
+		<h2 class="text-center">Cập nhật trường</h2>
+		<hr>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col" for="">Tên Trường</th>
+					<td><input type="text" class="form-control"placeholder="School Name" formControlName="name">
+						<div class="" *ngIf="name.invalid && (name.dirty || name.touched)">
+							<p *ngIf="name.errors.required">* Chưa nhập tên trường</p>
+							<!-- <p *ngIf="name.errors.minlength">* Tên trường quá ngắn</p>
+							<p *ngIf="name.errors.maxlength">* Tên trường quá dài</p> -->
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">Logo</th>
+					<td><input type="text" class="form-control"placeholder="URL Logo" formControlName="logo">
+						<div class="" *ngIf="logo.invalid && (logo.dirty || logo.touched)">
+							<p *ngIf="logo.errors.required">* Chưa nhập đường dẫn chứa ảnh</p>
+							<!--<p *ngIf="logo.errors.pattern">* Chưa nhập đúng đường dẫn chứa ảnh</p> -->
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col" for="">Hiệu Trưởng</th>
+					<td><input type="text" class="form-control"placeholder="President" formControlName="president">
+						<div class="" *ngIf="president.invalid && (president.dirty || president.touched)">
+							<p *ngIf="president.errors.required">* Chưa nhập tên hiệu trưởng </p>
+							<!-- <p *ngIf="president.errors.minlength">* Tên Hiệu trưởng quá ngắn </p> -->
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col" for="">Địa chỉ</th>
+					<td><input type="text" class="form-control"placeholder="Address" formControlName="address">
+						<div class="" *ngIf="address.invalid && (address.dirty || address.touched)">
+							<p *ngIf="address.errors.required">* Chưa nhập địa chỉ </p>
+							<!-- <p *ngIf="address.errors.minlength">* Địa chỉ quá ngắn </p> -->
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col" for="">Thành Phố</th>
+					<td><input type="text" name="name" class="form-control"placeholder="City/Province" formControlName="province">
+            <div class="" *ngIf="province.invalid && (province.dirty || province.touched)">
+							<p *ngIf="province.errors.required">* Chưa nhập thành phố </p>
+							<!-- <p *ngIf="province.errors.minlength">* Thành phố quá ngắn </p> -->
+						</div>
+          </td>
+				</tr>
+				<tr>
+					<th scope="col" for="">Giới Thiệu</th>
+					<td><input type="text" class="form-control"placeholder="About School" formControlName="about">
+						<div class="" *ngIf="about.invalid && (about.dirty || about.touched)">
+							<p *ngIf="about.errors.required">* Chưa nhập giới thiệu </p>
+							<p *ngIf="about.errors.minlength">* Giới thiệu quá ngắn</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="text-center">
+						<button type="submit" (click)="saveSchool()"
+							class="btn btn-success">Lưu
+              </button></td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+</form>
+<!-- </div> -->

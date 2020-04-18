@@ -1,0 +1,43 @@
+<div class="container">
+<div *ngIf="SchoolDetail == null">
+	<img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/200.gif" width="1000">
+</div>
+	<header class="d-flex mb-3 pt-5 justify-content-between">
+		<h2 class="text-center"> Thông tin trường </h2>
+	</header>
+	<div *ngIf="SchoolDetail != null">
+		<div class="row">
+			<div class="col-lg-6 text-center">
+				<img class="img-fluid rounded mb-4" [src]="SchoolDetail.logo" width="300">
+      </div>
+				<div class="col-lg-6">
+					<h2>{{SchoolDetail.name}}</h2>
+					<p><strong>Hiệu Trưởng :</strong> {{SchoolDetail.president}} </p>
+					<p><strong>Giới Thiệu :</strong> {{SchoolDetail.about}} </p>
+					<p><strong>Địa chỉ :</strong> {{SchoolDetail.address}} , {{SchoolDetail.province}}</p>
+
+				</div>
+			</div>
+			<div class="container">
+				<h2 class="text-center">Danh sách lớp</h2>
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Tên lớp</th>
+							<th scope="col">Số Phòng</th>
+							<th scope="col">Tổng sinh viên</th>
+							<th scope="col">Giáo Viên</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let c of classs">
+							<td>{{c.name}}</td>
+							<td>{{c.room_number}}</td>
+							<td>{{c.total_student}}</td>
+							<td><img [src]='c.main_teacher' width="70"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+</div>

@@ -1,0 +1,51 @@
+<form [formGroup]="classForm">
+	<div class="container">
+		<h2 class="text-center">Cập nhật lớp</h2>
+		<hr>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col" for="">Tên Lớp</th>
+					<td><input type="text" class="form-control"placeholder="Class Name" formControlName="name">
+						<div class="" *ngIf="name.invalid && (name.dirty || name.touched)">
+							<p *ngIf="name.errors.required">* Tên lớp không hợp lệ </p>
+							<p *ngIf="name.errors.minlength">* Tên lớp không hợp lệ</p>
+							<p *ngIf="name.errors.maxlength">* Tên lớp không hợp lệ</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">SỐ phòng</th>
+					<td><input type="text" class="form-control"placeholder="Room Number" formControlName="room_number">
+						<div class="" *ngIf="room_number.invalid && (room_number.dirty || room_number.touched)">
+							<p *ngIf="room_number.errors.required">* Số phòng không hợp lệ</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col" for="">Tổng sinh viên</th>
+					<td><input type="text" class="form-control"placeholder="Total Student" formControlName="total_student">
+						<div class="" *ngIf="total_student.invalid && (total_student.dirty || total_student.touched)">
+							<p *ngIf="total_student.errors.required">* Chưa nhập tổng sinh viên của lớp</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col" for="">Giáo viên</th>
+					<td><input type="text" class="form-control"placeholder="Main Teacher" formControlName="main_teacher">
+						<div class="" *ngIf="main_teacher.invalid && (main_teacher.dirty || main_teacher.touched)">
+							<p *ngIf="main_teacher.errors.required">* Không hợp lệ</p>
+							<p *ngIf="main_teacher.errors.pattern">* Không hợp lệ</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="text-center">
+						<button type="submit" (click)="saveClass()"
+							class="btn btn-success">Lưu
+              </button></td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+</form>

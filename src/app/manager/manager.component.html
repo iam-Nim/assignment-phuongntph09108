@@ -1,0 +1,43 @@
+<div class="container">
+  <div>
+       <img class="d-block img-fluid" src="https://moet.gov.vn/Publishing_Resources/web/images/logo.png" width="100%" alt="First slide">
+      </div>
+	<header class="d-flex mb-3 pt-5 justify-content-between">
+    
+		<div>
+      <h2 class="text-center"> Danh Sách Trường Đại Học Việt Nam </h2>
+		<button routerLink="edit-school" class="btn btn-success">Thêm trường đại học</button>
+		</div>
+	</header>
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">Mã</th>
+        	<th class="text-center" scope="col">Logo</th>
+				<th scope="col">Tên trường</th>
+			
+				<th scope="col" style="width: 15%">Hiệu trưởng</th>
+				<th scope="col">Địa chỉ</th>
+				<th scope="col">Tỉnh</th>
+				<th class="text-center" scope="col">Hành động</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let school of schools">
+				<th>{{school.id}}</th>
+        <td><img [src]='school.logo' width="100"></td>
+				<td>{{school.name}}</td>
+			
+				<td>{{school.president}}</td>
+				<td>{{school.address}}</td>
+				<td>{{school.province}}</td>
+				<td class="d-flex justify-content-between">
+					<a [routerLink]="['./edit-school',school.id]" class="btn btn-primary">Sửa</a>
+					<a [routerLink]="['detail-school',school.id]" class="btn btn-success">Chi Tiết</a>
+					<button type="button" (click)="removeSchool(school.id)" name="" id="" class="btn btn-danger ">Xóa</button>
+          
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
