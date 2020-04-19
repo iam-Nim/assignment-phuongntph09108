@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const schoolApiUrl='https://5e7863fa491e9700162ddfd8.mockapi.io/schools';
+const schoolApiUrl='https://5e7863ec491e9700162ddfc6.mockapi.io/schools';
 
 @Injectable()
 export class ClassService {
