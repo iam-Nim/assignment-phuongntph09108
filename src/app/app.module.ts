@@ -20,8 +20,8 @@ import { ClassEditComponent } from './class-edit/class-edit.component';
   imports:      [ 
     BrowserModule, FormsModule, HttpClientModule,ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: '',redirectTo: 'manager', pathMatch: 'full' },
-      // {path: 'home', component: HomeComponent },
+      {path: '',redirectTo: 'home', pathMatch: 'full' },
+      {path: 'home', component: HomeComponent },
       {path: 'detail-school/:id', component: SchoolsShowComponent},
       {path: 'manager', component: ManagerComponent},
       {path: 'manager/edit-school/:id', component: SchoolsEditComponent},
